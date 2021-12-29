@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import List, { ItemType } from './components/List';
 
-function App() {
+const App = () => {
+  // useState hook
+  const [items, setItems] = useState<ItemType[]>([])
+
   return (
-    <div className="App">
-      
+    <div className="app">
+      <div>
+        {/* props 전달 */}
+        <List items={items}></List>
+      </div>
     </div>
   );
 }

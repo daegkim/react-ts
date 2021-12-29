@@ -1,0 +1,8 @@
+/*
+.list ul : list class의 모든 후손에게 적용
+.list > ul : list class의 직계 후손에게만 적용
+*/
+.list ul{
+  list-style: none;
+  padding: 0px;
+}
