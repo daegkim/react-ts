@@ -6,19 +6,30 @@ const App = () => {
   // useState hook
   const [items, setItems] = useState<ItemType[]>([])
   const [isShown, setIsShown] = useState<boolean>(false)
+  const [inputValue, setInputValue] = useState<string>('')
 
- //이벤트 처리 함수 생성
+  // 이벤트 처리 함수 생성
   const handleListAddClick = (): void => {
     const item = {
       id: (items.length + 1).toString(),
       content: (items.length + 1).toString()
     }
-    //set state를 통해서 리렌더링
+    // set state를 통해서 리렌더링
     setItems([...items, item])
   }
 
   const handleIsShownClick = (): void => {
     setIsShown(!isShown)
+  }
+
+  // onChange event타입은 React에 정의되어 있다.
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setInputValue(e.target.value)
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+    alert(inputValue)
   }
 
   return (
@@ -38,6 +49,13 @@ const App = () => {
           isShown ? <p>true</p> : <p>false</p>
         }
         <button onClick={handleIsShownClick}>show</button>
+      </div>
+      <div>
+        {/* form형식 */}
+        <form onSubmit={handleSubmit}>
+          <input value={inputValue} onChange={handleInputChange}></input>
+          <button type='submit'>submit</button>
+        </form>
       </div>
     </div>
   );
