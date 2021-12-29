@@ -1,0 +1,8 @@
+.custom-div {
+  background-color: deepskyblue;
+}
+
+.custom-div > p {
+  padding: 0px;
+  margin: 0px;
+}

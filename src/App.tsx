@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import CustomDiv from './components/CustomDiv';
 import Input from './components/Input';
 import List, { ItemType } from './components/List';
 
@@ -63,6 +64,15 @@ const App = () => {
         {/* State 끌어올리기 setState를 하위컴포넌트에서 호출하도록 해서 리렌더링하도록 함 */}
         <Input sharedInputValue={sharedInputValue} setSharedInputValue={setSharedInputValue}></Input>
         <Input sharedInputValue={sharedInputValue} setSharedInputValue={setSharedInputValue}></Input>
+      </div>
+      <div>
+        {/**
+         * 컴포넌트 합성
+         * 컴포넌트 입력시 엔터를 입력하면 자동으로 props.children으로 전달된다. 
+         */}
+        <CustomDiv>
+          <p>hello</p>
+        </CustomDiv>
       </div>
     </div>
   );
