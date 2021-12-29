@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Input from './components/Input';
 import List, { ItemType } from './components/List';
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
   const [items, setItems] = useState<ItemType[]>([])
   const [isShown, setIsShown] = useState<boolean>(false)
   const [inputValue, setInputValue] = useState<string>('')
+  const [sharedInputValue, setSharedInputValue] = useState<string>('')
 
   // 이벤트 처리 함수 생성
   const handleListAddClick = (): void => {
@@ -56,6 +58,11 @@ const App = () => {
           <input value={inputValue} onChange={handleInputChange}></input>
           <button type='submit'>submit</button>
         </form>
+      </div>
+      <div>
+        {/* State 끌어올리기 setState를 하위컴포넌트에서 호출하도록 해서 리렌더링하도록 함 */}
+        <Input sharedInputValue={sharedInputValue} setSharedInputValue={setSharedInputValue}></Input>
+        <Input sharedInputValue={sharedInputValue} setSharedInputValue={setSharedInputValue}></Input>
       </div>
     </div>
   );
