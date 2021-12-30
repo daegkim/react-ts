@@ -6,6 +6,7 @@ import List, { ItemType } from './components/List';
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
 import LoginProvider from './contexts/LoginProvider';
+import ErrorBoundary from './error/ErrorBoundary';
 
 const App = () => {
   // useState hook
@@ -83,6 +84,15 @@ const App = () => {
           <Login></Login>
           <UserInfo></UserInfo>
         </LoginProvider>
+      </div>
+      <div>
+        <ErrorBoundary>
+          <CustomDiv>
+            <p>custom div</p>
+            <CustomDiv hasError>
+            </CustomDiv>
+          </CustomDiv>
+        </ErrorBoundary>
       </div>
     </div>
   );
