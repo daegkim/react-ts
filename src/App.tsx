@@ -3,6 +3,9 @@ import './App.css';
 import CustomDiv from './components/CustomDiv';
 import Input from './components/Input';
 import List, { ItemType } from './components/List';
+import Login from './components/Login';
+import UserInfo from './components/UserInfo';
+import LoginProvider from './contexts/LoginProvider';
 
 const App = () => {
   // useState hook
@@ -73,6 +76,13 @@ const App = () => {
         <CustomDiv>
           <p>hello</p>
         </CustomDiv>
+      </div>
+      <div>
+        {/* context와 context의 provider 사용 */}
+        <LoginProvider>
+          <Login></Login>
+          <UserInfo></UserInfo>
+        </LoginProvider>
       </div>
     </div>
   );
