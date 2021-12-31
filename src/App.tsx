@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import CustomDiv from './components/CustomDiv';
+import FragmentsList from './components/FragmentsList';
 import Input from './components/Input';
 import List, { ItemType } from './components/List';
 import Login from './components/Login';
@@ -93,6 +94,11 @@ const App = () => {
             </CustomDiv>
           </CustomDiv>
         </ErrorBoundary>
+      </div>
+      <div>
+        <ul style={{listStylePosition: 'inside', padding: '0px'}}>
+          <FragmentsList list={['a','b','c','d']}></FragmentsList>
+        </ul>
       </div>
     </div>
   );
