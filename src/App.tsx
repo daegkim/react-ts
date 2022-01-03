@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import CustomDiv from './components/CustomDiv';
-import FragmentsList from './components/FragmentsList';
+import ListItems from './components/ListItems';
 import Input from './components/Input';
 import List, { ItemType } from './components/List';
 import Login from './components/Login';
@@ -11,7 +11,7 @@ import ErrorBoundary from './error/ErrorBoundary';
 
 const App = () => {
   // useState hook
-  const [items, setItems] = useState<ItemType[]>([])
+  const [items, setItems] = useState<ItemType[]>([{id: '1', content: '1'},{id: '2', content: '2'}])
   const [isShown, setIsShown] = useState<boolean>(false)
   const [inputValue, setInputValue] = useState<string>('')
   const [sharedInputValue, setSharedInputValue] = useState<string>('')
@@ -94,11 +94,6 @@ const App = () => {
             </CustomDiv>
           </CustomDiv>
         </ErrorBoundary>
-      </div>
-      <div>
-        <ul style={{listStylePosition: 'inside', padding: '0px'}}>
-          <FragmentsList list={['a','b','c','d']}></FragmentsList>
-        </ul>
       </div>
     </div>
   );
