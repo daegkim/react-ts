@@ -1,10 +1,10 @@
 import { ItemType } from "./List"
 
-interface ListItems {
+interface ListItemsProps {
   items: ItemType[]
 }
 
-const ListItems = ({items}: ListItems) => {
+const ListItems = ({items}: ListItemsProps) => {
   return (
     <>
       {/* Fragment를 사용해서 불필요한 요소로 감싸지 않아도 된다.*/}

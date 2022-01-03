@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import CustomDiv from './components/CustomDiv';
-import ListItems from './components/ListItems';
 import Input from './components/Input';
 import List, { ItemType } from './components/List';
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
 import LoginProvider from './contexts/LoginProvider';
 import ErrorBoundary from './error/ErrorBoundary';
+import SelectedItems from './components/SelectedItems';
 
 const App = () => {
   // useState hook
@@ -84,6 +84,7 @@ const App = () => {
         <LoginProvider>
           <Login></Login>
           <UserInfo></UserInfo>
+          <SelectedItems items={['hello', 'world', 'guys']}></SelectedItems>
         </LoginProvider>
       </div>
       <div>
