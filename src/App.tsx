@@ -8,6 +8,7 @@ import UserInfo from './components/UserInfo';
 import LoginProvider from './contexts/LoginProvider';
 import ErrorBoundary from './error/ErrorBoundary';
 import SelectedItems from './components/SelectedItems';
+import Progressbar from './components/Progressbar';
 
 const App = () => {
   // useState hook
@@ -15,6 +16,8 @@ const App = () => {
   const [isShown, setIsShown] = useState<boolean>(false)
   const [inputValue, setInputValue] = useState<string>('')
   const [sharedInputValue, setSharedInputValue] = useState<string>('')
+  const [progressbarNow, setProgressbarNow] = useState<number>(50)
+  const [active, setActive] = useState<boolean>(false)
 
   // 이벤트 처리 함수 생성
   const handleListAddClick = (): void => {
@@ -95,6 +98,12 @@ const App = () => {
             </CustomDiv>
           </CustomDiv>
         </ErrorBoundary>
+      </div>
+      <div>
+        <Progressbar width={200} now={progressbarNow}></Progressbar>
+        <button onClick={() => {
+          setProgressbarNow(20);
+        }}>start</button>
       </div>
     </div>
   );
